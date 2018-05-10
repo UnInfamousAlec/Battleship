@@ -59,10 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */,
-				F456F11220A4C012003C59C6 /* Models */,
-				F456F11120A4C009003C59C6 /* Model Controllers */,
 				F456F11020A4C000003C59C6 /* View Controllers */,
-				F456F10F20A4BFFC003C59C6 /* Views */,
 				F456F10D20A4BFE2003C59C6 /* Storyboards */,
 				F456F10E20A4BFF3003C59C6 /* Resources */,
 			);
@@ -87,13 +84,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F456F10F20A4BFFC003C59C6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		F456F11020A4C000003C59C6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,20 +92,6 @@
 				F456F11520A4C40C003C59C6 /* RedPlayerViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F456F11120A4C009003C59C6 /* Model Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		F456F11220A4C012003C59C6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
