@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F456F0FC20A4BCE7003C59C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */; };
-		F456F0FE20A4BCE7003C59C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F0FD20A4BCE7003C59C6 /* ViewController.swift */; };
 		F456F10120A4BCE7003C59C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F456F0FF20A4BCE7003C59C6 /* Main.storyboard */; };
 		F456F10320A4BCE8003C59C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456F10220A4BCE8003C59C6 /* Assets.xcassets */; };
 		F456F10620A4BCE8003C59C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F456F10420A4BCE8003C59C6 /* LaunchScreen.storyboard */; };
@@ -17,7 +16,6 @@
 /* Begin PBXFileReference section */
 		F456F0F820A4BCE7003C59C6 /* Battleship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battleship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F456F0FD20A4BCE7003C59C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F456F10020A4BCE7003C59C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F456F10220A4BCE8003C59C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F456F10520A4BCE8003C59C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,13 +53,60 @@
 			isa = PBXGroup;
 			children = (
 				F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */,
-				F456F0FD20A4BCE7003C59C6 /* ViewController.swift */,
-				F456F0FF20A4BCE7003C59C6 /* Main.storyboard */,
-				F456F10220A4BCE8003C59C6 /* Assets.xcassets */,
-				F456F10420A4BCE8003C59C6 /* LaunchScreen.storyboard */,
-				F456F10720A4BCE8003C59C6 /* Info.plist */,
+				F456F11220A4C012003C59C6 /* Models */,
+				F456F11120A4C009003C59C6 /* Model Controllers */,
+				F456F11020A4C000003C59C6 /* View Controllers */,
+				F456F10F20A4BFFC003C59C6 /* Views */,
+				F456F10D20A4BFE2003C59C6 /* Storyboards */,
+				F456F10E20A4BFF3003C59C6 /* Resources */,
 			);
 			path = Battleship;
+			sourceTree = "<group>";
+		};
+		F456F10D20A4BFE2003C59C6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F456F0FF20A4BCE7003C59C6 /* Main.storyboard */,
+				F456F10420A4BCE8003C59C6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F456F10E20A4BFF3003C59C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F456F10220A4BCE8003C59C6 /* Assets.xcassets */,
+				F456F10720A4BCE8003C59C6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F456F10F20A4BFFC003C59C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F456F11020A4C000003C59C6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F456F11120A4C009003C59C6 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		F456F11220A4C012003C59C6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +180,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F456F0FE20A4BCE7003C59C6 /* ViewController.swift in Sources */,
 				F456F0FC20A4BCE7003C59C6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKKD39W87S;
-				INFOPLIST_FILE = Battleship/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Battleship/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XKKD39W87S;
-				INFOPLIST_FILE = Battleship/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Battleship/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
