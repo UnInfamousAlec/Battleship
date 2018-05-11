@@ -19,16 +19,19 @@ class InitialViewController: UIViewController {
     
     
     // MARK: - Properties
+    var shipCount = 2
+    var shotCount = 5
+    
     let backgroundView = UIView()
     let battleLabel = UILabel()
     let shipLabel = UILabel()
     
     let shipsRemainingView = UIView()
     let shipsRemainingLabel = UILabel()
-    let shipsRemainingCountLabel = UILabel()
+    var shipsRemainingCountLabel = UILabel()
     let shotsRemainingView = UIView()
     let shotsRemainingLabel = UILabel()
-    let shotsRemainingCountLabel = UILabel()
+    var shotsRemainingCountLabel = UILabel()
     
     let boardBorderView = UIView()
     let boardInsideView = UIView()
@@ -124,7 +127,7 @@ class InitialViewController: UIViewController {
         shipsRemainingLabel.heightAnchor.constraint(equalTo: shipsRemainingView.heightAnchor, multiplier: 0.6).isActive = true
         
         
-        shipsRemainingCountLabel.text = "1"
+        shipsRemainingCountLabel.text = "\(shipCount)"
         shipsRemainingCountLabel.textAlignment = .right
         shipsRemainingCountLabel.font = UIFont(name: "Academy Engraved LET", size: 30)
         
@@ -164,7 +167,7 @@ class InitialViewController: UIViewController {
         shotsRemainingLabel.widthAnchor.constraint(equalTo: shotsRemainingView.widthAnchor, multiplier: 0.8).isActive = true
         shotsRemainingLabel.heightAnchor.constraint(equalTo: shotsRemainingView.heightAnchor, multiplier: 0.6).isActive = true
         
-        shotsRemainingCountLabel.text = "3"
+        shotsRemainingCountLabel.text = "\(shotCount)"
         shotsRemainingCountLabel.textAlignment = .right
         shotsRemainingCountLabel.textColor = UIColor.white
         shotsRemainingCountLabel.font = UIFont(name: "Academy Engraved LET", size: 30)
@@ -289,7 +292,7 @@ class InitialViewController: UIViewController {
         
         // A1 Button
         boardA1Button.backgroundColor = UIColor.white
-//        boardA1Button.
+        boardA1Button.addTarget(self, action: #selector(a1ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardA1Button)
         
@@ -302,6 +305,7 @@ class InitialViewController: UIViewController {
         
         // A2 Button
         boardA2Button.backgroundColor = UIColor.white
+        boardA2Button.addTarget(self, action: #selector(a2ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardA2Button)
         
@@ -314,6 +318,7 @@ class InitialViewController: UIViewController {
         
         // A3 Button
         boardA3Button.backgroundColor = UIColor.white
+        boardA3Button.addTarget(self, action: #selector(a3ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardA3Button)
         
@@ -326,6 +331,7 @@ class InitialViewController: UIViewController {
         
         // B1 Button
         boardB1Button.backgroundColor = UIColor.white
+        boardB1Button.addTarget(self, action: #selector(b1ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardB1Button)
         
@@ -338,6 +344,7 @@ class InitialViewController: UIViewController {
         
         // B2 Button
         boardB2Button.backgroundColor = UIColor.white
+        boardB2Button.addTarget(self, action: #selector(b2ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardB2Button)
         
@@ -350,6 +357,7 @@ class InitialViewController: UIViewController {
         
         // B3 Button
         boardB3Button.backgroundColor = UIColor.white
+        boardB3Button.addTarget(self, action: #selector(b3ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardB3Button)
         
@@ -362,6 +370,7 @@ class InitialViewController: UIViewController {
         
         // C1 Button
         boardC1Button.backgroundColor = UIColor.white
+        boardC1Button.addTarget(self, action: #selector(c1ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardC1Button)
         
@@ -374,6 +383,7 @@ class InitialViewController: UIViewController {
         
         // C2 Button
         boardC2Button.backgroundColor = UIColor.white
+        boardC2Button.addTarget(self, action: #selector(c2ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardC2Button)
         
@@ -386,6 +396,7 @@ class InitialViewController: UIViewController {
         
         // C3 Button
         boardC3Button.backgroundColor = UIColor.white
+        boardC3Button.addTarget(self, action: #selector(c3ShotTaken), for: .touchUpInside)
         
         boardInsideView.addSubview(boardC3Button)
         
@@ -396,12 +407,205 @@ class InitialViewController: UIViewController {
         boardC3Button.heightAnchor.constraint(equalTo: boardInsideView.heightAnchor, multiplier: 0.33).isActive = true
     }
     
+    @objc func a1ShotTaken() {
+        if boardA1Button.isEnabled {
+            print("A1 selected")
+            boardA1Button.backgroundColor = UIColor.red
+            
+            shipCount -= 1
+            shotCount -= 1
+            shipsRemainingCountLabel.text = "\(shipCount)"
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func a2ShotTaken() {
+        if boardA2Button.isEnabled {
+            print("A2 selected")
+            boardA2Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func a3ShotTaken() {
+        if boardA3Button.isEnabled {
+            print("A3 selected")
+            boardA3Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func b1ShotTaken() {
+        if boardB1Button.isEnabled {
+            print("B1 selected")
+            boardB1Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func b2ShotTaken() {
+        if boardB2Button.isEnabled {
+            print("B2 selected")
+            boardB2Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func b3ShotTaken() {
+        if boardB3Button.isEnabled {
+            print("B3 selected")
+            boardB3Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func c1ShotTaken() {
+        if boardC1Button.isEnabled {
+            print("C1 selected")
+            boardC1Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func c2ShotTaken() {
+        if boardC2Button.isEnabled {
+            print("C2 selected")
+            boardC2Button.backgroundColor = UIColor.red
+            
+            shipCount -= 1
+            shotCount -= 1
+            shipsRemainingCountLabel.text = "\(shipCount)"
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
+    @objc func c3ShotTaken() {
+        if boardC3Button.isEnabled {
+            print("C3 selected")
+            boardC3Button.backgroundColor = UIColor.blue
+            
+            shotCount -= 1
+            shotsRemainingCountLabel.text = "\(shotCount)"
+            
+            if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shipCount == 0 {
+                youWon()
+            }
+        }
+    }
+    
     func youWon() {
+        print("You Won!!!")
         
+        let alertController = UIAlertController(title: "You Won!!!", message: "Congrats, you don't completely suck at life!", preferredStyle: .alert)
         
+        let resetButton = UIAlertAction(title: "Play Again!", style: .cancel) { (action) in
+            self.reset()
+        }
+        
+        alertController.addAction(resetButton)
+        
+        present(alertController, animated: true)
     }
     
     func youLost() {
+        print("You Lost...")
         
+        let alertController = UIAlertController(title: "You Lost...", message: "Wow, you completely suck...", preferredStyle: .alert)
+        
+        let resetButton = UIAlertAction(title: "Try Harder", style: .cancel) { (action) in
+            self.reset()
+        }
+        
+        alertController.addAction(resetButton)
+        
+        present(alertController, animated: true)
+    }
+    
+    func reset() {
+        shipCount = 2
+        shipsRemainingCountLabel.text = "\(shipCount)"
+        shotCount = 5
+        shotsRemainingCountLabel.text = "\(shotCount)"
+        
+        boardA1Button.isSelected = false
+        boardA1Button.backgroundColor = UIColor.white
+        boardA2Button.isSelected = false
+        boardA2Button.backgroundColor = UIColor.white
+        boardA3Button.isSelected = false
+        boardA3Button.backgroundColor = UIColor.white
+        boardB1Button.isSelected = false
+        boardB1Button.backgroundColor = UIColor.white
+        boardB2Button.isSelected = false
+        boardB2Button.backgroundColor = UIColor.white
+        boardB3Button.isSelected = false
+        boardB3Button.backgroundColor = UIColor.white
+        boardC1Button.isSelected = false
+        boardC1Button.backgroundColor = UIColor.white
+        boardC2Button.isSelected = false
+        boardC2Button.backgroundColor = UIColor.white
+        boardC3Button.isSelected = false
+        boardC3Button.backgroundColor = UIColor.white
     }
 }
