@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4EC49220A4E34B0098E2FB /* Ship Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EC49120A4E34B0098E2FB /* Ship Controller.swift */; };
+		BA4EC49420A4E39A0098E2FB /* Ship.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4EC49320A4E39A0098E2FB /* Ship.swift */; };
 		F456F0FC20A4BCE7003C59C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */; };
 		F456F10120A4BCE7003C59C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F456F0FF20A4BCE7003C59C6 /* Main.storyboard */; };
 		F456F10320A4BCE8003C59C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456F10220A4BCE8003C59C6 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA4EC49120A4E34B0098E2FB /* Ship Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ship Controller.swift"; sourceTree = "<group>"; };
+		BA4EC49320A4E39A0098E2FB /* Ship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ship.swift; sourceTree = "<group>"; };
 		F456F0F820A4BCE7003C59C6 /* Battleship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Battleship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F456F10020A4BCE7003C59C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +43,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA4EC48920A4D46A0098E2FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA4EC49320A4E39A0098E2FB /* Ship.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA4EC49020A4D4D20098E2FB /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA4EC49120A4E34B0098E2FB /* Ship Controller.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		F456F0EF20A4BCE7003C59C6 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				F456F0FB20A4BCE7003C59C6 /* AppDelegate.swift */,
+				BA4EC48920A4D46A0098E2FB /* Model */,
+				BA4EC49020A4D4D20098E2FB /* Model Controller */,
 				F456F11020A4C000003C59C6 /* View Controllers */,
 				F456F10D20A4BFE2003C59C6 /* Storyboards */,
 				F456F10E20A4BFF3003C59C6 /* Resources */,
@@ -166,8 +188,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F456F11620A4C40C003C59C6 /* RedPlayerViewController.swift in Sources */,
+				BA4EC49220A4E34B0098E2FB /* Ship Controller.swift in Sources */,
 				F456F11820A4C439003C59C6 /* BluePlayerViewController.swift in Sources */,
 				F456F0FC20A4BCE7003C59C6 /* AppDelegate.swift in Sources */,
+				BA4EC49420A4E39A0098E2FB /* Ship.swift in Sources */,
 				F456F11420A4C3F3003C59C6 /* InitialViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
