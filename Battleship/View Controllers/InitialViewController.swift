@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Darwin
 
 class InitialViewController: UIViewController {
 
@@ -15,12 +16,14 @@ class InitialViewController: UIViewController {
         super.viewDidLoad()
 
         setupInitialView()
+        moveShips()
     }
     
     
     // MARK: - Properties
     var shipCount = 2
     var shotCount = 5
+    var shipLocations = [1,2,3,4,5,6,7,8,9]
     
     let backgroundView = UIView()
     let battleLabel = UILabel()
@@ -408,14 +411,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func a1ShotTaken() {
+        
         if boardA1Button.isEnabled {
             print("A1 selected")
-            boardA1Button.backgroundColor = UIColor.red
             
-            shipCount -= 1
-            shotCount -= 1
-            shipsRemainingCountLabel.text = "\(shipCount)"
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 1 {
+                
+                boardA1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 1 {
+                
+                boardA1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardA1Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -426,12 +450,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func a2ShotTaken() {
+        
         if boardA2Button.isEnabled {
             print("A2 selected")
-            boardA2Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 2 {
+                
+                boardA2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 2 {
+                
+                boardA2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardA2Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -442,12 +489,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func a3ShotTaken() {
+        
         if boardA3Button.isEnabled {
             print("A3 selected")
-            boardA3Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 3 {
+                
+                boardA3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 3 {
+                
+                boardA3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardA3Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -458,12 +528,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func b1ShotTaken() {
+        
         if boardB1Button.isEnabled {
             print("B1 selected")
-            boardB1Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 4 {
+                
+                boardB1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 4 {
+                
+                boardB1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardB1Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -474,12 +567,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func b2ShotTaken() {
+        
         if boardB2Button.isEnabled {
             print("B2 selected")
-            boardB2Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 5 {
+                
+                boardB2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 5 {
+                
+                boardB2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardB2Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -490,12 +606,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func b3ShotTaken() {
+        
         if boardB3Button.isEnabled {
             print("B3 selected")
-            boardB3Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 6 {
+                
+                boardB3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 6 {
+                
+                boardB3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardB3Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -506,12 +645,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func c1ShotTaken() {
+        
         if boardC1Button.isEnabled {
             print("C1 selected")
-            boardC1Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 7 {
+                
+                boardC1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 7 {
+                
+                boardC1Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardC1Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -522,14 +684,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func c2ShotTaken() {
+        
         if boardC2Button.isEnabled {
             print("C2 selected")
-            boardC2Button.backgroundColor = UIColor.red
             
-            shipCount -= 1
-            shotCount -= 1
-            shipsRemainingCountLabel.text = "\(shipCount)"
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 8 {
+                
+                boardC2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 8 {
+                
+                boardC2Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardC2Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -540,12 +723,35 @@ class InitialViewController: UIViewController {
     }
     
     @objc func c3ShotTaken() {
+        
         if boardC3Button.isEnabled {
             print("C3 selected")
-            boardC3Button.backgroundColor = UIColor.blue
             
-            shotCount -= 1
-            shotsRemainingCountLabel.text = "\(shotCount)"
+            if shipLocations.first == 9 {
+                
+                boardC3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else if shipLocations.last == 9 {
+                
+                boardC3Button.backgroundColor = UIColor.red
+                
+                shipCount -= 1
+                shotCount -= 1
+                shipsRemainingCountLabel.text = "\(shipCount)"
+                shotsRemainingCountLabel.text = "\(shotCount)"
+                
+            } else {
+                
+                boardC3Button.backgroundColor = UIColor.blue
+                
+                shotCount -= 1
+                shotsRemainingCountLabel.text = "\(shotCount)"
+            }
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
@@ -553,6 +759,10 @@ class InitialViewController: UIViewController {
                 youWon()
             }
         }
+    }
+    
+    func randomInt(min: Int, max:Int) -> Int {
+        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
     }
     
     func youWon() {
@@ -607,5 +817,23 @@ class InitialViewController: UIViewController {
         boardC2Button.backgroundColor = UIColor.white
         boardC3Button.isSelected = false
         boardC3Button.backgroundColor = UIColor.white
+        
+        moveShips()
+    }
+    
+    func moveShips() {
+        shipLocations.shuffle()
+        print(shipLocations)
+    }
+}
+
+
+extension Array {
+    mutating func shuffle() {
+        for _ in 0..<10 {
+            sort {
+                (_,_) in arc4random() < arc4random()
+            }
+        }
     }
 }
