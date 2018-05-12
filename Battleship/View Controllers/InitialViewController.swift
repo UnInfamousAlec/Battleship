@@ -443,6 +443,8 @@ class InitialViewController: UIViewController {
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
+            } else if shotCount == 1 && shipCount == 2 {
+                youLost()
             } else if shipCount == 0 {
                 youWon()
             }
@@ -481,6 +483,8 @@ class InitialViewController: UIViewController {
             }
             
             if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shotCount == 1 && shipCount == 2 {
                 youLost()
             } else if shipCount == 0 {
                 youWon()
@@ -521,6 +525,8 @@ class InitialViewController: UIViewController {
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
+            } else if shotCount == 1 && shipCount == 2 {
+                youLost()
             } else if shipCount == 0 {
                 youWon()
             }
@@ -559,6 +565,8 @@ class InitialViewController: UIViewController {
             }
             
             if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shotCount == 1 && shipCount == 2 {
                 youLost()
             } else if shipCount == 0 {
                 youWon()
@@ -599,6 +607,8 @@ class InitialViewController: UIViewController {
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
+            } else if shotCount == 1 && shipCount == 2 {
+                youLost()
             } else if shipCount == 0 {
                 youWon()
             }
@@ -637,6 +647,8 @@ class InitialViewController: UIViewController {
             }
             
             if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shotCount == 1 && shipCount == 2 {
                 youLost()
             } else if shipCount == 0 {
                 youWon()
@@ -677,6 +689,8 @@ class InitialViewController: UIViewController {
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
+            } else if shotCount == 1 && shipCount == 2 {
+                youLost()
             } else if shipCount == 0 {
                 youWon()
             }
@@ -716,6 +730,8 @@ class InitialViewController: UIViewController {
             
             if shotCount == 0 && shipCount > 0 {
                 youLost()
+            } else if shotCount == 1 && shipCount == 2 {
+                youLost()
             } else if shipCount == 0 {
                 youWon()
             }
@@ -754,6 +770,8 @@ class InitialViewController: UIViewController {
             }
             
             if shotCount == 0 && shipCount > 0 {
+                youLost()
+            } else if shotCount == 1 && shipCount == 2 {
                 youLost()
             } else if shipCount == 0 {
                 youWon()
